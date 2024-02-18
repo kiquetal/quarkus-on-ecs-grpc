@@ -9,7 +9,7 @@
 
 - AWS Account
 - ECR with the images already uploaded.
-- AWS CDK boostraped
+- AWS CDK boostraped (cdk bootstrap aws://ACCOUNT-NUMBER/REGION)
 - Docker installed
 
 
@@ -32,10 +32,11 @@ docker push 123456789012.dkr.ecr.us-east-1.amazonaws.com/my-web-app:latest
 
 ```bash
 cdk deploy InfraStack
+
 ```
 
 
-### Remember to destroy
+### Remember to destroy the universe.
 
 ```bash
 cdk destroy InfraStack
