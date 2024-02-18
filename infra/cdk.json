@@ -60,7 +60,7 @@
     "@aws-cdk/aws-appsync:useArnForSourceApiAssociationIdentifier": true,
     "@aws-cdk/aws-rds:preventRenderingDeprecatedCredentials": true,
     "dev": {
-     "account": "123456789012",
+     "account": "572553955017",
       "region": "us-east-1"
     },
     "prod": {
