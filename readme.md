@@ -46,3 +46,15 @@ cdk destroy InfraStack
 ### Diagram
 
 ![Diagram](./quarkus-on-ecs.drawio.png)
+
+
+### Show logs
+
+- Server 
+
+![Server](./grpc-server.png)
+
+
+- Client
+
+![Client](./grpc-client.png)
