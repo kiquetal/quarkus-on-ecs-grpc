@@ -40,3 +40,8 @@ cdk deploy InfraStack
 ```bash
 cdk destroy InfraStack
 ```
+
+
+### Diagram
+
+![Diagram](./quarkus-on-ecs.drawio.png)
