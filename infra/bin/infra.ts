@@ -2,7 +2,7 @@
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
 import { InfraStack } from '../lib/infra-stack';
-import { InfraStackProd } from '../lib/infra-stack-prod';
+import { InfraStackProd } from '../lib/prod/infra-stack-prod';
 const app = new cdk.App();
 const devStack = new InfraStack(app, 'InfraStack', {
     env: {

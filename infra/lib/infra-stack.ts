@@ -1,5 +1,7 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
+import {aws_ecr, CfnOutput} from "aws-cdk-lib";
+import {EcsConstruct} from "./EcsConstruct";
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
 
 
@@ -11,11 +13,25 @@ export class InfraStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: InfraStackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
+    const ecrServerGrpc = new aws_ecr.Repository(this, 'EcrServerGrpc', {
+        repositoryName: 'grpc-java-server',
 
-    // example resource
-    // const queue = new sqs.Queue(this, 'InfraQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+        });
+    const ecrClientGrpc = new aws_ecr.Repository(this, 'EcrClientGrpc', {
+        repositoryName: 'grpc-java-client',
+        });
+
+    new EcsConstruct(this, 'EcsConstruct')
+
+    new CfnOutput(this, 'EcrServerGrpcOutput', {
+        value: ecrServerGrpc.repositoryUri
+    });
+    new CfnOutput(this, 'EcrClientGrpcOutput', {
+        value: ecrClientGrpc.repositoryUri
+    });
+
+
   }
+
+
 }
